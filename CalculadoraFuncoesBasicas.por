@@ -1,49 +1,39 @@
 programa {
-	funcao inicio() {
-	    
-		real opcao, valor1, valor2, resultado
-		
-    opcao = 0
-		enquanto (opcao != 6){
-		  escreva("\nEscolha uma opção:\n[1] - SOMAR \n[2] - SUBTRAIR \n[3] - MULTIPLICAR \n[4] - DIVIDIR \n[5] - PORCENTAGEM \n[6]- DESLIGAR CALCULADORA\n")
+  funcao inicio() {
+    inteiro opcao, x, y, sair
+    sair = 1
+    enquanto (sair != 0){
+      escreva("---Calculadora---\n")
+      escreva("\nDigite um número: ")
+      leia(x)
+      escreva("Digite outro número: ")
+      leia(y)
+      escreva ("Escolha uma opção: 1 - multiplicar | 2 - subtrair | 3 - somar | 4 - dividir\n")
       leia(opcao)
-      se (opcao != 6){
-        escreva("Digite o 1º nÚmero: ")
-        leia(valor1)
-        escreva("Digite o 2º nÚmero: ")
-        leia(valor2)
-      
-        escolha(opcao){
-          caso 1:
-            resultado = valor1 + valor2
-            escreva("\n" + valor1 +  " + " + valor2 + " = " + resultado + "\n")
+
+      escolha(opcao){
+        caso 1:
+          escreva("" + x + " x " + y + " = ")
+          escreva(x*y)
           pare
-          
-          caso 2:
-            resultado = valor1 - valor2
-            escreva("\n" + valor1 +  " - " + valor2 + " = " + resultado + "\n")
+        caso 2:
+          escreva("" + x + " - " + y + " = ")
+          escreva(x-y)
           pare
-          
-          caso 3:
-            resultado = valor1 * valor2
-            escreva("\n" + valor1 +  " x " + valor2 + " = " + resultado + "\n")
+        caso 3:
+          escreva("" + x + " + " + y + " = ")
+          escreva(x+y)
           pare
-      
-          caso 4:
-            resultado = valor1 / valor2
-            escreva("\n" + valor1 +  " / " + valor2 + " = " + resultado + "\n")
+        caso 4:
+          escreva("" + x + " / " + y + " = ")
+          escreva(x/y)
           pare
-          caso 5:
-            resultado = (valor1/100) * valor2
-            escreva("\n" + valor1 +  "% de " + valor2 + " = " + resultado + "\n")
-          pare
-          caso contrario: 
-            escreva("---NÚMERO INVÁLIDO---")
-          pare
-        } senao{
-          escreva("\n***CALCULADORA DESLIGADA***\n")
-        }  
-		  }		
-	  }
-  }   
+        caso contrario:
+          escreva("\n----- OPÇÃO INVÁLIDA -----\n")
+      }
+      escreva("\nSair da Calculadora : \n[0] - Sim\n[1] - Não \n")
+      leia(sair)
+    
+    }
+  }
 }
